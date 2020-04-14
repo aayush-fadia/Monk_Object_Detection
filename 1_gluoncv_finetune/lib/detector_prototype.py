@@ -100,7 +100,7 @@ class Detector():
         cmd1 = "cp " + os.path.dirname(os.path.realpath(__file__)) + "/im2rec.py " + os.getcwd() + "/";
         os.system(cmd1);  
 
-        cmd2 = "python im2rec.py train.lst " + self.system_dict["root"] + "/" + self.system_dict["img_dir"] + "/ --pass-through --pack-label"
+        cmd2 = "python im2rec.py train.lst \"" + self.system_dict["root"] + "/" + self.system_dict["img_dir"] + "/\" --pass-through --pack-label"
         os.system(cmd2);
 
         self.system_dict["local"]["train_dataset"] = gcv.data.RecordFileDetection('train.rec')
